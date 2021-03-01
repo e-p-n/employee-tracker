@@ -9,7 +9,9 @@ const connection = mysql.createConnection({
   database: 'hr_db'
 });
 
+
 const startQuestions = require('./utils/inquires/startQuestions')
+
 
 
 function launchTracker() {
@@ -30,7 +32,6 @@ function launchTracker() {
            ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝            
                                     
 `);
-
 startQuestions(connection);
 }
 

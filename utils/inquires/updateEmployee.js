@@ -14,7 +14,7 @@ async function updateEmployeeRole(connection) {
           CONCAT(first_name, ' ', last_name) AS name,
           id
       FROM employees
-        ORDER BY last_name;
+          ORDER BY last_name;
       `
     )
     .then((rows) => {
@@ -105,7 +105,6 @@ async function updateEmployeeMan(connection) {
           empIds.push(rows[0][i].id);
           manIds.push(rows[0][i].id);
       }
-      console.table(empIds, employees);
   })
   .then(() => {
     inquirer

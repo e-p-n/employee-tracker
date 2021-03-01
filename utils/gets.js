@@ -2,6 +2,7 @@ const cTable = require('console.table');
 const inquirer = require('inquirer');
 const restartQuestions = require('./inquires/restartQuestions');
 
+
   
 
 getDepartments = (connection) => {
