@@ -1,4 +1,3 @@
-const cTable = require('console.table');
 const inquirer = require('inquirer');
 const addToTable = require('../add');
 const restartQuestions = require('./restartQuestions');

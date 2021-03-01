@@ -1,5 +1,4 @@
 const mysql = require('mysql2');
-const cTable = require('console.table');
 const inquirer = require('inquirer');
 const restartQuestions = require('./restartQuestions');
 
@@ -60,7 +59,11 @@ async function getBudget(connection) {
               }
               budget = budget.toFixed(2);
               let formattedBudget = `$${budget.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
-              console.log(`Budget for ${res[0].name} is: ${formattedBudget}`);
+              console.log(`
+--------------------------------------------------
+Budget for ${res[0].name} is: ${formattedBudget}
+--------------------------------------------------
+              `);
             }
           )
         })
