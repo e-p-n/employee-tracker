@@ -1,6 +1,7 @@
 const cTable = require('console.table');
 const inquirer = require('inquirer');
 const addToTable = require('../add');
+const restartQuestions = require('./restartQuestions');
 
 async function newRole(connection) {
     
@@ -58,7 +59,9 @@ async function newRole(connection) {
                     }
                 }
                 addToTable(connection, 'roles', newRoleObj);
-            });
+            })
+            .then(() => restartQuestions(connection));
+
     });
   }
   

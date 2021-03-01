@@ -1,4 +1,4 @@
-const startQuestions = require('./inquires/startQuestions');
+const restartQuestions = require('./inquires/restartQuestions');
 
 async function updateEmp(connection, updateType, empId){
     await connection.promise().query(
@@ -8,8 +8,6 @@ async function updateEmp(connection, updateType, empId){
             {id: empId}
         ]
     )
-    .then()
-    .then(() => startQuestions());
         
 }
 

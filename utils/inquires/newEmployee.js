@@ -1,5 +1,6 @@
 const inquirer = require('inquirer');
 const addToTable = require('../add');
+const restartQuestions = require('./restartQuestions');
 
 async function newEmployee(connection) {
     
@@ -83,8 +84,9 @@ async function newEmployee(connection) {
                     }
                 }
                 addToTable(connection, 'employees', newEmpObj);
-            });
-    });
+            })
+            .then(() => restartQuestions(connection));
+    })
   }
   
     

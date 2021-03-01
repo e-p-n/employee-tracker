@@ -1,5 +1,6 @@
 const inquirer = require('inquirer');
 const addToTable = require('../add');
+const restartQuestions = require('./restartQuestions');
 
 
 const newDepartment = (connection) => {
@@ -11,7 +12,9 @@ const newDepartment = (connection) => {
       })
       .then(data => {
         addToTable(connection, 'departments', data);
-      });
+      })
+      .then(() => restartQuestions(connection));
+
   }
 
 module.exports = newDepartment;

@@ -1,6 +1,7 @@
 const mysql = require('mysql2');
 const cTable = require('console.table');
 const inquirer = require('inquirer');
+const restartQuestions = require('./restartQuestions');
 
 async function getBudget(connection) {
     let departments = [];
@@ -63,6 +64,8 @@ async function getBudget(connection) {
             }
           )
         })
+        .then(() => restartQuestions(connection));
+
 
     })
     

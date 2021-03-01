@@ -1,7 +1,7 @@
 const cTable = require('console.table');
 const inquirer = require('inquirer');
 const updateEmp = require('../updateEmp');  
-const startQuestions = require('./startQuestions');
+const restartQuestions = require('./restartQuestions');
 
 async function updateEmployeeRole(connection) {
     let employees = [];
@@ -72,8 +72,10 @@ async function updateEmployeeRole(connection) {
               roleInfo = {role_id: roleIds[i]};
             }
           }
-          updateEmp(connection, roleInfo, empId, startQuestions);
+          updateEmp(connection, roleInfo, empId);
         })
+        .then(() => restartQuestions(connection));
+
     })
     
 
@@ -139,7 +141,10 @@ async function updateEmployeeMan(connection) {
           }
         }
         updateEmp(connection, managerInfo, empId);
-      });
+      })
+      .then()
+      .then(() => restartQuestions(connection));
+
     });
   
 };

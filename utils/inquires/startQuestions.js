@@ -1,7 +1,7 @@
 const inquirer = require('inquirer');
 
-const {getEmployees, getEmployeesByDept, getEmployeesByManager} = require('../gets/employee');
-const {getDepartments, getRoles} = require('../gets/roles_depts');
+//const {getEmployeesByDept, getEmployeesByManager} = require('../gets/employee');
+const {getDepartments, getRoles, getEmployees} = require('../gets');
 const {updateEmployeeRole, updateEmployeeMan} = require('./updateEmployee');
 const newDepartment = require('./newDepartment');
 const newEmployee = require('./newEmployee');

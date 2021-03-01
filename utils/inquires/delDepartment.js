@@ -1,5 +1,6 @@
 const inquirer = require('inquirer');
 const deleteFromTable = require('../delete');
+const restartQuestions = require('./restartQuestions');
 
 
 async function delDepartment(connection) {
@@ -38,8 +39,10 @@ async function delDepartment(connection) {
                 }
             }
             deleteFromTable(connection, 'departments', delId);
-            
-        });
+        })
+        .then(() => restartQuestions(connection));
+
+
     });
 };
 

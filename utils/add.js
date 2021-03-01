@@ -1,12 +1,3 @@
-const mysql = require('mysql2');
-
-// convertDataForRole = (connection,roleIfo){
-
-// }
-
-// convertDataForEmp = (connection, empInfo){
-
-// }
 
 addToTable = (connection, table, addInfo) => {
     console.log(`Adding to ${table}...\n`);
@@ -21,6 +12,5 @@ addToTable = (connection, table, addInfo) => {
    
 }
 
-//module.exports = {convertDataForRole, convertDataForEmp, addToTable};
 module.exports = addToTable;
  
